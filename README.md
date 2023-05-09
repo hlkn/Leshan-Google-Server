@@ -1,22 +1,24 @@
 
-Il package di integrazione "googleinterface" è inserito all'interno del modulo Leshan-server-demo. La classe principale è GoogleInterface che crea un'interfaccia verso Google e gestisce le sue richieste. Al termine dell'inizializzazione del Leshan-Server-Demo viene istanziato un oggetto GoogleInterface mettendo in esecuzione il protocollo sviluppato nel package.
+The "googleinterface" integration package is placed inside the Leshan-server-demo module. The main class is GoogleInterface which creates an interface to Google and handles its requests. After the Leshan-Server-Demo initialization is completed, a GoogleInterface object is instantiated by running the protocol developed in the package.
 
-La classe principale del server è LeshanServerDemo.java
+The main server class is LeshanServerDemo.java
 
-Per connettersi alla Leshan Demo UI visitare http://localhost:8080  
+To connect to the Leshan Demo UI visit http://localhost:8080  
 
-Il package è sviluppato in 3 sottopackage:
+The package is developed into 3 subpackages:
 
-	-data: mantiene le strutture dati utilizzate dal 		  	programma come i dati degli AuthToken o i file di    	configurazione.
+	-data: maintains the data structures used by the program such as AuthToken data or configuration files.
 
-	-protocol: mantiene i protocolli utilizzati dal servizio,    
-     ovvero la gestione di Oauth2 e di Google Smart Home
+	-protocol: maintains the protocols used by the service,    
+     namely the management of Oauth2 and Google Smart Home.
 
-	-integration: gestisce la conversione dei dispositivi e 	le loro interazioni con il server LwM2M.
+	-integration: manages the conversion of devices and their interactions with the LwM2M server.
 
-Per registrare un nuovo dispositivi bisogna utilizzare il modulo Leshan-Client-Demo, la classe princiapale del modulo è LeshanClientDemo.java
+To register a new device, the Leshan-Client-Demo module must be used; the princiapal class of the module is LeshanClientDemo.java
+
+Translated with www.DeepL.com/Translator (free version)
 
 //////  UTILIZZO NGROK
 
-Per testare velocemente il server può essere utilizzato il file batch ngrok_start disponibile in questa directory. Il batch esegue il programma ngrok.exe creando un tunnel verso la porta 80(porta di default definita nel file di configurazione googleinterface/google_configuration/conf.json). 
-Ngrok fornirà due uri identiche, copiare la uri https e utilizzarla su GoogleActions per i link di collegamento contenuti in Develop/Actions(aggiungendo /smart) e Develop/Account Linking/OAuthClientInformation(aggiungendo rispettivamente /oauth e /token). Avviato il test Google inoltrerà le richieste ai link forniti, che il software di tunnel ngrok instraderà all'interfaccia 80 del computer su cui è in esecuzione. I DATI SONO IN CHIARO NON ACCETTA COMUNICAZIONI HTTPS SENZA PAGARE ABBONAMENTO PREMIUM, Ngrok è solo una soluzione adatta al testing.
+To quickly test the server, the ngrok_start batch file available in this directory can be used. The batch runs the program ngrok.exe creating a tunnel to port 80(default port defined in the configuration file googleinterface/google_configuration/conf.json). 
+Ngrok will provide two identical uri's, copy the https uri and use it on GoogleActions for the linking links contained in Develop/Actions(adding /smart) and Develop/Account Linking/OAuthClientInformation(adding /oauth and /token respectively). Starting the test, Google will forward requests to the links provided, which the ngrok tunnel software will route to interface 80 on the computer it is running on. DATA ARE CLEARLY NOT ACCEPTING HTTPS COMMUNICATIONS WITHOUT PAYING PREMIUM SUBSCRIPTION, Ngrok is only a solution suitable for testing.
